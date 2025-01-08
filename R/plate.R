@@ -21,7 +21,7 @@ plate.layout<-function(rows,cols){
     col=rep(seq(cols),times=n/cols),
     value=0
   )
-  plate$alpahnumeric<-paste0(LETTERS[plate$row],plate$col)
+  plate$well.id<-paste0(LETTERS[plate$row],plate$col)
   plate$row_col<-paste(plate$row,plate$col,sep="_")
   return(plate)
 }
@@ -33,7 +33,7 @@ plate.layout<-function(rows,cols){
 #'
 #' @param plate A `data.frame` as returned from \link{plate.layout}.
 #' @param row.label Character string; row-labeling style:
-#' * 'alpha' (default) for letter-based row-labeling; 96-well plate style.
+#' * 'letters' (default) for letter-based row-labeling; 96-well plate style.
 #' * 'numeric' for number-based row-labeling
 #'
 #' @return a \link[ggplot2]{ggplot2} object
@@ -84,13 +84,13 @@ plate.layout<-function(rows,cols){
 #' shape=visit.id),
 #' size=10)
 #'
-plate.plot <- function(plate,row.label=c('alpha','numeric')){
+plate.plot <- function(plate,row.label=c('letters','numeric')){
   ##
   .cols<-seq(max(plate$col))
   .rows<-seq(max(plate$row))
   ##
   row.label<-match.arg(row.label)
-  if(row.label=='alpha'){
+  if(row.label=='letters'){
     .row.label<-LETTERS[.rows]
   }
   if(row.label=='numeric'){
@@ -103,7 +103,7 @@ plate.plot <- function(plate,row.label=c('alpha','numeric')){
       data = plate,
       mapping = ggplot2::aes(x0=col,y0=row,r = 0.45)
     ) +
-    ggplot2::coord_equal() +
+    ggplot2::coord_equal(clip = "off") +
     ggplot2::scale_x_continuous(
       breaks = .cols,
       expand = ggplot2::expansion(mult = c(0.01, 0.01))

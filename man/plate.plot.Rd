@@ -4,14 +4,14 @@
 \alias{plate.plot}
 \title{Plot a box/plate based layout}
 \usage{
-plate.plot(plate, row.label = c("alpha", "numeric"))
+plate.plot(plate, row.label = c("letters", "numeric"))
 }
 \arguments{
 \item{plate}{A \code{data.frame} as returned from \link{plate.layout}.}
 
 \item{row.label}{Character string; row-labeling style:
 \itemize{
-\item 'alpha' (default) for letter-based row-labeling; 96-well plate style.
+\item 'letters' (default) for letter-based row-labeling; 96-well plate style.
 \item 'numeric' for number-based row-labeling
 }}
 }
