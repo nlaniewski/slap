@@ -101,7 +101,9 @@ cellometer.counts.parse<-function(counts.csv.path,convert.date.time=TRUE,return.
     if(make.wide&return.assay.type=="PBMC"){
       counts<-data.table::rbindlist(
         lapply(split(counts,by='date.time'),function(dt){
-          cols.conserved<-names(which(dt[,sapply(.SD,function(j)length(unique(j)))]==1))
+          # cols.conserved<-names(which(dt[,sapply(.SD,function(j)length(unique(j)))]==1))
+          ##make it explict
+          cols.conserved<-c("date.time", "sample.name", "dilution.factor","assay.type", "date", "time")
           dt<-cbind(
             unique(dt[,..cols.conserved]),
             data.table::data.table(
