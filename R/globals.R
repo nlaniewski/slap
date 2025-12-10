@@ -6,6 +6,6 @@ utils::globalVariables(
     "assay.type", "Buffer", "Buffer Alias", "Cell Type", "cell.count", "cell.type",
     "concentration", "concentration.live", "concentration.total",
     "count.type", "Date", "Date Time", "href", "instrument", "location",
-    "marker", "panel.id", "Reagent", "Time", "titration", "titration.note",
-    "user.id", "viability", "volume.mix.uL")
+    "marker", "panel.id", "Reagent", "Reagent|Material", "Time", "titration",
+    "titration.note", "user.id", "viability", "volume.mix.uL")
 )

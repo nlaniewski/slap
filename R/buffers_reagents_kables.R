@@ -1,6 +1,6 @@
 get.buffers<-function(permabilization.type=c('BD','eBio')){
   staining.buffers.alias <- c(
-    c("SB","SBn","VB"),
+    c("SB","SBn","VB","BSB+"),
     switch(
       match.arg(permabilization.type),
       BD = c('CF/CP','bdPB'),
@@ -20,16 +20,16 @@ get.buffers<-function(permabilization.type=c('BD','eBio')){
 }
 
 get.reagents<-function(reagents.c=NULL,reagents.pattern=NULL,...){
-  reagents.table<-data.table::copy(reagents)
+  reagents.table<-data.table::copy(reagents_materials)
   reagents.table<-(
     reagents.table[
       if(!is.null(reagents.c)){
-        Reagent %in% reagents.c
+        `Reagent|Material` %in% reagents.c
       }else if(!is.null(reagents.pattern)){
-        grep(reagents.pattern,Reagent,...)
+        grep(reagents.pattern,`Reagent|Material`,...)
       }
     ]
-    [,Reagent := kableExtra::cell_spec(Reagent,"html",link=href)]
+    [,`Reagent|Material` := kableExtra::cell_spec(`Reagent|Material`,"html",link=href)]
     [,href:=NULL]
   )
   reagents.table <- kableExtra::kable(

@@ -1,6 +1,4 @@
 get.panel.from.master<-function(panel.master.path,study.id=NULL,panel.id=NULL,drop.unused.detectors=TRUE){
-  ##for NSE R CMD check; data.table vars
-
   ##
   file.extension<-sub("^.*\\.","",panel.master.path)
   if(!file.extension %in% c('csv','xlsx')){

@@ -38,6 +38,11 @@ buffers<-rbind(
     Buffer ="RPMI 1640 + FBS + antibiotics",
     'Buffer Alias' = "R10",
     Constituents = "RPMI 1640 + 10% FBS + 1x Penicillin-Streptomycin (445 mL + 50 mL + 5 mL); 0.2 um filter sterilized"
+  ),
+  c(
+    Buffer ="BD Horizon Brilliant Stain Buffer Plus",
+    'Buffer Alias' = "BSB+",
+    Constituents = "use as provided."
   )
 )
 ##

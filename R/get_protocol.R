@@ -1,4 +1,26 @@
-get.protocol<-function(panel.master.path,fix.type='eBio',test.number,stain.volume=50,browse = TRUE){
+#' @title Generate a printable (.html) protocol for flow cytometery staining
+#'
+#' @param panel.master.path file path to a conformant panel master (.xlsx).
+#' @param fix.type Character string -- default `'eBio'`; fixation type used for intracellular/intranuclear staining.
+#' @param test.number Numeric; the number of individual samples (plate wells) to be stained
+#' @param overage Numeric -- default `.2`; percent overage as decimal.
+#' @param stain.volume Numeric -- default `50`; total uL (microliter) stain volume per well.
+#' @param browse Logical -- default `TRUE`; opens the .html document in a browser window for printing.
+#'
+#' @returns Opens a .html (.Rmd) document using the default browser.
+#' @export
+#'
+#' @examples
+#' panel.master.path <- system.file("extdata/panels_CD4pheno.xlsx",package = 'slap')
+get.protocol<-function(
+    panel.master.path,
+    fix.type=c('eBio','BD'),
+    test.number,
+    overage = .2,
+    stain.volume=50,
+    browse = TRUE
+)
+{
   ##
   panel<-get.panel.from.master(panel.master.path)
   ##
@@ -23,11 +45,12 @@ get.protocol<-function(panel.master.path,fix.type='eBio',test.number,stain.volum
   )
   author<-panel[,unique(user.id)]
   ##
+  test.number <- test.number + test.number * overage
   .panel.tables<-panel.tables(panel,test.number,stain.volume)
   .panel.kables<-panel.kables(.panel.tables)
   ##
-  .buffers <- get.buffers('eBio')
-  .reagents <- get.reagents(reagents.pattern = "FBS|PBS|Universal Nuclease|UltraPure Distilled Water|eBio")
+  .buffers <- get.buffers(permabilization.type = fix.type)
+  .reagents <- get.reagents(reagents.pattern = "FBS|PBS|Universal Nuclease|UltraPure Distilled Water|eBio|Filter|Brilliant Stain Buffer Plus")
   ##
   fn<-paste(
     title.vec[['study.id']],

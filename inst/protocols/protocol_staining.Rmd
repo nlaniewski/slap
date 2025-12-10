@@ -31,7 +31,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ### Version:<br/>Body:   `r params$protocol.hash.body`<br/>Panel:  `r params$ protocol.hash.panel`
 
-# Reagents
+# Reagents/Materials
 
 `r params$reagents`
 
@@ -41,7 +41,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 # Panel Mixes
 
-## Viability
+## Viability -- prepare immediately before use
 
 Tests = `r params$tests.number`
 
@@ -52,7 +52,7 @@ Tests = `r params$tests.number`
 
 <div style="page-break-after: always;"></div>
 
-## Extracellular
+## Extracellular -- prepare before starting protocol proper
 
 Tests = `r params$tests.number`
 
@@ -75,57 +75,51 @@ Tests = `r params$tests.number`
 <div style="page-break-after: always;"></div>
 
 # Protocol
+Term **SPIN^300^**: spin 300xg, 5 minutes, room-temperature<br>
 
-#
-#. $\square$ Add 200 $\mu$L **SBn** to fresh V-bottom "stain" plate(s), matching the layout/wells of respective stim. plate(s)
-#. $\square$ Place stain plate(s) and stim. plate(s) in a 37^o^C, 5% CO~2~ incubator for 10 minutes.
-#. $\square$ Remove **SBn** from stain plate(s) and transfer cells from respective stim. plate(s)
-    + NOTE: Pulse-pipette wells of stim. plate(s) to fully resuspend cells before transferring
-#. $\square$ *WASH* stim. plate(s): 200 $\mu$L **SBn**; spin 300xg, 5 minutes, room-temperature
-#. $\square$ Use 200 $\mu$L **SBn** from stim. plate(s) to *WASH* respective stain plate(s)
-    + NOTE: Stain plate(s) -- visually confirm that cell pellets are concentrated/compacted
-    + NOTE: Stim plate(s) -- resuspend any residual cells before adding to respective stain plate(s)
-#. $\square$ Spin 300xg, 5 minutes, room-temperature; multichannel aspirate supernatant
-#. $\square$ Stain: **Barcodes (CD45)**; 50 $\mu$L, 20 minutes, room-temperature
-    + NOTE: Pulse-pipette to mix; minimize the generation of air bubbles
-#. $\square$ *WASH*: 150 $\mu$L **SBn**; spin 300xg, 5 minutes, room-temperature; multichannel aspirate supernatant
-#. $\square$ *WASH*: 200 $\mu$L **SBn**; spin 300xg, 5 minutes, room-temperature; multichannel aspirate supernatant
-#. $\square$ *WASH*: 200 $\mu$L **SBn**; spin 300xg, 5 minutes, room-temperature; multichannel aspirate supernatant
-#. $\square$ Pool each **Barcode Block** into respective, pre-labeled 15 mL tube
-    + NAMING CONVENTION: *Study_Batch_BCpool_BLOCKnumber_PANEL*; 
-    + Example: *COVAIL_001_BCpool_BLOCK1_CYTOKINE*
-    + Example: *COVAIL_001_BCpool_BLOCK2_CYTOKINE*
-#. $\square$ Spin 300xg, 5 minutes, room-temperature
-#. $\square$ Vacuum aspirate supernatant
-    + NOTE: leave ~20 $\mu$L residual
-#. $\square$ Stain: **Scarlet Viability Dye Mix**; 50 $\mu$L
-    + NOTE: Fully disrupt cell pellet in remaining residual before staining
-    + NOTE: Immediately before use, prepare **Scarlet Viability Dye Mix**; 1 $\mu$L dye + 3.2 mL **VB**
-#. $\square$ Spike-in: **TruStain FCx**; 5 $\mu$L
-#. $\square$ *Vortex-Genie Shaker*: 10 minutes, room-temperature
-    + NOTE: Spin-filter pre-made **Surface Mix**; 12,000xg, 3 minutes
-#. $\square$ Spike-in: **Surface Mix**; 50 $\mu$L
-#. $\square$ *Vortex-Genie Shaker*: 20 minutes, room-temperature
-#. $\square$ *WASH*: 2 mL **SBn**; spin 300xg, 5 minutes, room-temperature; vacuum aspirate supernatant
-#. $\square$ *WASH*: 2 mL **SBn**; spin 300xg, 5 minutes, room-temperature; vacuum aspirate supernatant
-#. $\square$ For each **Barcode Block/Pool**: pre-aliquot 500 $\mu$L of **BD Cytofix/Cytoperm** into a fresh 1.5 mL tube
-#. $\square$ For each **Barcode Block/Pool**: 
-    1. Fully resuspend (ensure complete disruption) cell pellet in 50 $\mu$L **SBn**; pulse pipette a minimum of 15 times
-    2. Without changing tip, rinse tip in respective, previously aliquoted **BD Cytofix/Cytoperm** to maximally recover residual cells
-#. $\square$ Spike-in: **BD Cytofix/Cytoperm** (respective); 500 $\mu$L
-#. $\square$ Immediately vortex (setting 5) for a full 10 second count
-    + NOTE: ensures maximal, fixed single-cells
-#. $\square$ *Vortex-Genie Shaker*: 20 minutes, room-temperature
-    + NOTE: prepare **ICS Mix**
-<br><br>**!!!All subsequent spins: 800xg!!!**<br><br>
-#. $\square$ *WASH*: 2 mL **PB**; spin 800xg, 5 minutes, room-temperate; vacuum aspirate supernatant
-#. $\square$ *WASH*: 2 mL **PB**; spin 800xg, 5 minutes, room-temperate; vacuum aspirate supernatant
-#. $\square$ Stain: **ICS Mix**; 50 $\mu$L
-    + NOTE: Fully disrupt cell pellet in remaining residual before staining
-#. $\square$ *Vortex-Genie Shaker*: 30 minutes, room-temperature
-#. $\square$ *WASH*: 2 mL **PB**; spin 800xg, 5 minutes, room-temperate; vacuum aspirate supernatant
-#. $\square$ *WASH*: 2 mL **PB**; spin 800xg, 5 minutes, room-temperate; vacuum aspirate supernatant
-    + NOTE: Before spinning, take an aliquot for counting: 5 $\mu$L of cells/pool + 15 $\mu$L **SB**
-    + NOTE: Cellometer K2; assay: *1.6% fixed*; dilution factor: 4
-#. $\square$ Resuspend in **SB** at a concentration of 15E6/mL; store at 4^o^C (fridge)
-    + NOTE: total cells/15E6 = resuspension volume (mL); e.g., 26.3E6 (total cells)/15E6 = 1.75 mL
+* $\square$ Add 200 $\mu$L **SBn** to a fresh V-bottom **STAIN** plate, matching the layout/wells of respective **STIM** plate
+* $\square$ Place **STAIN** plate and **STIM** plate in a 37^o^C, 5% CO~2~ incubator for 10 minutes
+* $\square$ Remove **SBn** from **STAIN** plate and transfer cells from respective **STIM** plate
+    + NB: Pulse-pipette wells of STIM plate to fully resuspend cells before transferring
+    + NB: for DynaBead stimulation: magnetically remove beads before transferring 
+* $\square$ *WASH* **STIM** plate: 200 $\mu$L **SBn**; **SPIN^300^** both plates
+    + NB: **STIM** plate is washed to recover residual cells
+* $\square$ Use 200 $\mu$L **SBn** from **STIM** plate to *WASH* respective **STAIN** plate
+    + NB: **STAIN** plate -- visually confirm that cell pellets are concentrated/compacted in V
+    + NB: **STIM** plate -- resuspend any residual cells before adding to respective **STAIN** plate
+* $\square$ **SPIN^300^**; multichannel aspirate supernatant
+* $\square$ *WASH* 200 $\mu$L **VB**; **SPIN^300^**; multichannel aspirate supernatant
+    + NB: Wash using **VB** (0.5% FBS) to reduce residual serum in preparation for viability staining
+* $\square$ Stain: **Viability**; 50 $\mu$L
+    + NB: Fully disrupt cell pellets with controlled pulse-pipetting
+    + NB: Prepared immediately before use
+* $\square$ Spike-in: **TruStain FCx**; 5 $\mu$L
+    + NB: Carry-over from protocol using tubes...probably not tenable for use with plates...maybe add FCx in with Viability adjusted by test number...
+* $\square$ Stain 10 minutes, room-temperature
+    + NB: During incubation, spin-filter pre-made **Surface Mix**; 12,000xg, 3 minutes
+    + UPDATE NOTE: add spin-filter information to reagents/materials list
+* $\square$ Spike-in: **Extracellular** mix; 50 $\mu$L
+* $\square$ Stain 20 minutes, room-temperature
+* $\square$ *WASH*: 100 $\mu$L **SBn**; **SPIN^300^**; multichannel aspirate supernatant
+* $\square$ *WASH*: 200 $\mu$L **SBn**; **SPIN^300^**; multichannel aspirate supernatant
+* $\square$ *FIX*: 100 $\mu$L **F/P**; 20 minutes, room-temperature
+    + NB: pulse-pipette a minimum of 15 times to ensure complete disruption of pellet; avoid air bubbles
+    + NB: prepare **Intracellular** mix
+    
+**!!!All subsequent spins: 800xg!!!**  
+Term **SPIN^800^**: spin 800xg, 5 minutes, room-temperature  
+Term **FLICK**: flick supernatant into red biohazard bin; blot once on a fresh bib (no tapping of plate)
+
+* $\square$ *WASH*: 100 $\mu$L **ePB**; **SPIN^800^**; **FLICK**
+* $\square$ *WASH*: 200 $\mu$L **ePB**; **SPIN^800^**; **FLICK**
+* $\square$ Stain: **Intracellular** mix; 50 $\mu$L; 30 minutes; room-temperature
+    + NB: Fully disrupt cell pellets by pulse-pipetting
+* $\square$ *WASH*: 200 $\mu$L **ePB**; **SPIN^800^**; **FLICK**
+* $\square$ *WASH*: 200 $\mu$L **ePB**; **SPIN^800^**; **FLICK**
+* $\square$ *WASH*: 200 $\mu$L **SB**; **SPIN^800^**; **FLICK**
+    + NB: Wash using standard **SB** -- no nuclease
+* $\square$ Resuspend: 250 $\mu$L **SB**; transfer to pre-racked cluster tubes
+    + NB: Resuspend using standard **SB** -- no nuclease
+    + NB: Pre-racked cluster tubes: match exactly the **STAIN** plate layout; label each with a unique identifier (well)
+* $\square$ Foil-wrap cluster tube rack and store in fridge until acquisition
+    
