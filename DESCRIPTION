@@ -1,6 +1,6 @@
 Package: slap
 Title: A Collection of Tools to Support Scheible Lab Workflows
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: 
     person("Nathan", "Laniewski", , "nathan_laniewski@urmc.rochester.edu", role = c("aut", "cre"))
 Description: *S*cheible *L*ab's *A*mazing *P*ackage.
