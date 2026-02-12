@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WorksheetTemplate xmlns:i="http://www.w3.org/2001/XMLSchema-instance" z:Id="1" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns="http://schemas.datacontract.org/2004/07/Rainbow.Analysis">
+	<Version xmlns="http://schemas.datacontract.org/2004/07/Rainbow">2000</Version>
+	<CreatedBy z:Id="2">Admin</CreatedBy>
+	<CreationTime>2021-08-04T10:48:45.0341888+08:00</CreationTime>
+	<Description z:Id="3">Default Unmixed Worksheet</Description>
+	<ID>9ba62a30-f025-4301-be21-42d336ec8d25</ID>
+	<IsCopyOfDefault>true</IsCopyOfDefault>
+	<IsFluorescent>true</IsFluorescent>
+	<IsShared>false</IsShared>
+	<IsUserDefined>true</IsUserDefined>
+	<Name z:Id="4">Default Unmixed Worksheet</Name>
+	<UserId>f943ce67-cef4-eb11-873d-087190a783b0</UserId>
+	<Worksheet z:Id="5">
+		<Version xmlns="http://schemas.datacontract.org/2004/07/Rainbow">2000</Version>
+		<_Annots xmlns:d3p1="http://schemas.datacontract.org/2004/07/Rainbow" z:Id="6" z:Size="0"/>
+		<_GateConstraint xmlns:d3p1="http://schemas.datacontract.org/2004/07/Rainbow" z:Id="7" z:Size="0"/>
+		<_Plots z:Id="8" z:Size="1">
+			<PlotDesc z:Id="9" i:type="DensityPlotDesc">
+				<_BackgroundColor xmlns:d5p1="http://schemas.datacontract.org/2004/07/System.Windows.Media">
+					<d5p1:A>255</d5p1:A>
+					<d5p1:B>255</d5p1:B>
+					<d5p1:G>255</d5p1:G>
+					<d5p1:R>255</d5p1:R>
+					<d5p1:ScA>1</d5p1:ScA>
+					<d5p1:ScB>1</d5p1:ScB>
+					<d5p1:ScG>1</d5p1:ScG>
+					<d5p1:ScR>1</d5p1:ScR>
+				</_BackgroundColor>
+				<_BiexponentialScaleModeX>Manual</_BiexponentialScaleModeX>
+				<_BiexponentialScaleModeY>Manual</_BiexponentialScaleModeY>
+				<_Height>260</_Height>
+				<_Id>4dcfd4cd-8919-4d05-a196-594bb92f9124</_Id>
+				<_IncludeCustomTitle>true</_IncludeCustomTitle>
+				<_IncludePopulationName>true</_IncludePopulationName>
+				<_IncludeTubeName>false</_IncludeTubeName>
+				<_PageNumber>1</_PageNumber>
+				<_ParameterScales xmlns:d5p1="http://schemas.datacontract.org/2004/07/Rainbow" z:Id="10" z:Size="2">
+					<d5p1:Scale>Linear</d5p1:Scale>
+					<d5p1:Scale>Linear</d5p1:Scale>
+				</_ParameterScales>
+				<_PlotGate xmlns:d5p1="http://schemas.datacontract.org/2004/07/Rainbow" z:Id="11" i:type="d5p1:AllEventsGateDesc">
+					<d5p1:_Bound xmlns:d6p1="http://schemas.datacontract.org/2004/07/System.Windows">
+						<d6p1:_height>0</d6p1:_height>
+						<d6p1:_width>0</d6p1:_width>
+						<d6p1:_x>0</d6p1:_x>
+						<d6p1:_y>0</d6p1:_y>
+					</d5p1:_Bound>
+					<d5p1:_CreationOrder>3</d5p1:_CreationOrder>
+					<d5p1:_DeltaHorizontal>NaN</d5p1:_DeltaHorizontal>
+					<d5p1:_DeltaVertical>NaN</d5p1:_DeltaVertical>
+					<d5p1:_GateColor>4278190080</d5p1:_GateColor>
+					<d5p1:_GateParameters z:Id="12" z:Size="0"/>
+					<d5p1:_GtDataPosX>0</d5p1:_GtDataPosX>
+					<d5p1:_GtDataPosY>0</d5p1:_GtDataPosY>
+					<d5p1:_Id>cd75a20f-0fd1-46f2-8ef3-ebd4538261d2</d5p1:_Id>
+					<d5p1:_IncludeCount>false</d5p1:_IncludeCount>
+					<d5p1:_IncludePercentParent>false</d5p1:_IncludePercentParent>
+					<d5p1:_Name z:Id="13">All Events</d5p1:_Name>
+					<d5p1:_ParameterScales z:Id="14" z:Size="0"/>
+					<d5p1:_StatDescs i:nil="true"/>
+					<d5p1:_Vertices xmlns:d6p1="http://schemas.datacontract.org/2004/07/System.Windows" i:nil="true"/>
+					<d5p1:_VisualResolution xmlns:d6p1="http://schemas.datacontract.org/2004/07/System.Windows" i:nil="true"/>
+					<d5p1:_XRValue>0</d5p1:_XRValue>
+					<d5p1:_YRValue>0</d5p1:_YRValue>
+					<d5p1:_lineWeight i:nil="true"/>
+					<d5p1:_SubGates z:Id="15" z:Size="0"/>
+				</_PlotGate>
+				<_PlotParameters xmlns:d5p1="http://schemas.datacontract.org/2004/07/Rainbow" z:Id="16" z:Size="2">
+					<d5p1:Parameter z:Id="17">
+						<d5p1:_Fluorochrome z:Id="18">FSC</d5p1:_Fluorochrome>
+						<d5p1:_Group i:nil="true"/>
+						<d5p1:_IsScatter>true</d5p1:_IsScatter>
+						<d5p1:_Label i:nil="true"/>
+						<d5p1:_SignalType>65</d5p1:_SignalType>
+					</d5p1:Parameter>
+					<d5p1:Parameter z:Id="19">
+						<d5p1:_Fluorochrome z:Id="20">SSC</d5p1:_Fluorochrome>
+						<d5p1:_Group i:nil="true"/>
+						<d5p1:_IsScatter>true</d5p1:_IsScatter>
+						<d5p1:_Label i:nil="true"/>
+						<d5p1:_SignalType>65</d5p1:_SignalType>
+					</d5p1:Parameter>
+				</_PlotParameters>
+				<_RangeX xmlns:d5p1="http://schemas.datacontract.org/2004/07/Rainbow">
+					<d5p1:Max>4194304</d5p1:Max>
+					<d5p1:Min>0</d5p1:Min>
+				</_RangeX>
+				<_RangeY xmlns:d5p1="http://schemas.datacontract.org/2004/07/Rainbow">
+					<d5p1:Max>4194304</d5p1:Max>
+					<d5p1:Min>0</d5p1:Min>
+				</_RangeY>
+				<_Title i:nil="true"/>
+				<_TopLeft xmlns:d5p1="http://schemas.datacontract.org/2004/07/System.Windows">
+					<d5p1:_x>680</d5p1:_x>
+					<d5p1:_y>20</d5p1:_y>
+				</_TopLeft>
+				<_Width>260</_Width>
+				<_XRValue>-1000</_XRValue>
+				<_YRValue>-1000</_YRValue>
+				<_DensityPlotLevel>15</_DensityPlotLevel>
+				<_IsOutliers>false</_IsOutliers>
+				<_IsSmooth>false</_IsSmooth>
+			</PlotDesc>
+		</_Plots>
+		<_PopulationHierarchy xmlns:d3p1="http://schemas.datacontract.org/2004/07/Rainbow" i:nil="true"/>
+		<_Root xmlns:d3p1="http://schemas.datacontract.org/2004/07/Rainbow" z:Ref="11" i:nil="true"/>
+		<_ShowPageBoundary>false</_ShowPageBoundary>
+		<_ShowUnmixData>true</_ShowUnmixData>
+		<_Stats xmlns:d3p1="http://schemas.datacontract.org/2004/07/Rainbow" z:Id="21" z:Size="0"/>
+		<_orderedParameter xmlns:d3p1="http://schemas.datacontract.org/2004/07/Rainbow" z:Id="22" z:Size="67">
+			<d3p1:Parameter z:Id="23">
+				<d3p1:_Fluorochrome z:Id="24">FSC</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Id="25">Blue</d3p1:_Group>
+				<d3p1:_IsScatter>true</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="26">
+				<d3p1:_Fluorochrome z:Id="27">SSC</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Id="28">Violet</d3p1:_Group>
+				<d3p1:_IsScatter>true</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="29">
+				<d3p1:_Fluorochrome z:Id="30">SSC-B</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="25" i:nil="true"/>
+				<d3p1:_IsScatter>true</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="31">
+				<d3p1:_Fluorochrome z:Id="32">UV1</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Id="33">UV</d3p1:_Group>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="34">
+				<d3p1:_Fluorochrome z:Id="35">UV2</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="33" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="36">
+				<d3p1:_Fluorochrome z:Id="37">UV3</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="33" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="38">
+				<d3p1:_Fluorochrome z:Id="39">UV4</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="33" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="40">
+				<d3p1:_Fluorochrome z:Id="41">UV5</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="33" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="42">
+				<d3p1:_Fluorochrome z:Id="43">UV6</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="33" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="44">
+				<d3p1:_Fluorochrome z:Id="45">UV7</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="33" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="46">
+				<d3p1:_Fluorochrome z:Id="47">UV8</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="33" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="48">
+				<d3p1:_Fluorochrome z:Id="49">UV9</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="33" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="50">
+				<d3p1:_Fluorochrome z:Id="51">UV10</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="33" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="52">
+				<d3p1:_Fluorochrome z:Id="53">UV11</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="33" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="54">
+				<d3p1:_Fluorochrome z:Id="55">UV12</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="33" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="56">
+				<d3p1:_Fluorochrome z:Id="57">UV13</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="33" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="58">
+				<d3p1:_Fluorochrome z:Id="59">UV14</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="33" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="60">
+				<d3p1:_Fluorochrome z:Id="61">UV15</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="33" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="62">
+				<d3p1:_Fluorochrome z:Id="63">UV16</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="33" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="64">
+				<d3p1:_Fluorochrome z:Id="65">V1</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="28" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="66">
+				<d3p1:_Fluorochrome z:Id="67">V2</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="28" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="68">
+				<d3p1:_Fluorochrome z:Id="69">V3</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="28" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="70">
+				<d3p1:_Fluorochrome z:Id="71">V4</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="28" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="72">
+				<d3p1:_Fluorochrome z:Id="73">V5</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="28" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="74">
+				<d3p1:_Fluorochrome z:Id="75">V6</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="28" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="76">
+				<d3p1:_Fluorochrome z:Id="77">V7</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="28" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="78">
+				<d3p1:_Fluorochrome z:Id="79">V8</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="28" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="80">
+				<d3p1:_Fluorochrome z:Id="81">V9</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="28" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="82">
+				<d3p1:_Fluorochrome z:Id="83">V10</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="28" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="84">
+				<d3p1:_Fluorochrome z:Id="85">V11</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="28" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="86">
+				<d3p1:_Fluorochrome z:Id="87">V12</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="28" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="88">
+				<d3p1:_Fluorochrome z:Id="89">V13</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="28" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="90">
+				<d3p1:_Fluorochrome z:Id="91">V14</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="28" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="92">
+				<d3p1:_Fluorochrome z:Id="93">V15</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="28" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="94">
+				<d3p1:_Fluorochrome z:Id="95">V16</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="28" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="96">
+				<d3p1:_Fluorochrome z:Id="97">B1</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="25" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="98">
+				<d3p1:_Fluorochrome z:Id="99">B2</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="25" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="100">
+				<d3p1:_Fluorochrome z:Id="101">B3</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="25" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="102">
+				<d3p1:_Fluorochrome z:Id="103">B4</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="25" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="104">
+				<d3p1:_Fluorochrome z:Id="105">B5</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="25" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="106">
+				<d3p1:_Fluorochrome z:Id="107">B6</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="25" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="108">
+				<d3p1:_Fluorochrome z:Id="109">B7</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="25" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="110">
+				<d3p1:_Fluorochrome z:Id="111">B8</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="25" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="112">
+				<d3p1:_Fluorochrome z:Id="113">B9</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="25" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="114">
+				<d3p1:_Fluorochrome z:Id="115">B10</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="25" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="116">
+				<d3p1:_Fluorochrome z:Id="117">B11</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="25" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="118">
+				<d3p1:_Fluorochrome z:Id="119">B12</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="25" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="120">
+				<d3p1:_Fluorochrome z:Id="121">B13</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="25" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="122">
+				<d3p1:_Fluorochrome z:Id="123">B14</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="25" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="124">
+				<d3p1:_Fluorochrome z:Id="125">YG1</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Id="126">YellowGreen</d3p1:_Group>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="127">
+				<d3p1:_Fluorochrome z:Id="128">YG2</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="126" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="129">
+				<d3p1:_Fluorochrome z:Id="130">YG3</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="126" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="131">
+				<d3p1:_Fluorochrome z:Id="132">YG4</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="126" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="133">
+				<d3p1:_Fluorochrome z:Id="134">YG5</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="126" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="135">
+				<d3p1:_Fluorochrome z:Id="136">YG6</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="126" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="137">
+				<d3p1:_Fluorochrome z:Id="138">YG7</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="126" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="139">
+				<d3p1:_Fluorochrome z:Id="140">YG8</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="126" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="141">
+				<d3p1:_Fluorochrome z:Id="142">YG9</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="126" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="143">
+				<d3p1:_Fluorochrome z:Id="144">YG10</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="126" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="145">
+				<d3p1:_Fluorochrome z:Id="146">R1</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Id="147">Red</d3p1:_Group>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="148">
+				<d3p1:_Fluorochrome z:Id="149">R2</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="147" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="150">
+				<d3p1:_Fluorochrome z:Id="151">R3</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="147" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="152">
+				<d3p1:_Fluorochrome z:Id="153">R4</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="147" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="154">
+				<d3p1:_Fluorochrome z:Id="155">R5</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="147" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="156">
+				<d3p1:_Fluorochrome z:Id="157">R6</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="147" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="158">
+				<d3p1:_Fluorochrome z:Id="159">R7</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="147" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+			<d3p1:Parameter z:Id="160">
+				<d3p1:_Fluorochrome z:Id="161">R8</d3p1:_Fluorochrome>
+				<d3p1:_Group z:Ref="147" i:nil="true"/>
+				<d3p1:_IsScatter>false</d3p1:_IsScatter>
+				<d3p1:_Label i:nil="true"/>
+				<d3p1:_SignalType>65</d3p1:_SignalType>
+			</d3p1:Parameter>
+		</_orderedParameter>
+	</Worksheet>
+</WorksheetTemplate>

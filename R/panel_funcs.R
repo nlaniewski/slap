@@ -50,11 +50,21 @@ panel.tables<-function(panel,test.number=20,stain.volume=50){
                     c('volume.mix.uL','volume.mix.note'):=list(volume.mix.uL*10,"of a 1:10 in buffer")
         ]
       }
+      if(panel.split[,any(volume.mix.uL<1)]){
+        panel.split[volume.mix.uL<1,
+                    c('volume.mix.uL','volume.mix.note'):=list(volume.mix.uL*10,"of a 1:100 in buffer")
+        ]
+      }
+      panel.split[,volume.mix.uL := round(volume.mix.uL,1)]
       panel.split[]
     }
     ),
     fill = TRUE
   )
+  ##
+  if("volume.mix.note" %in% names(panels.mix)){
+    panels.mix[is.na(volume.mix.note), volume.mix.note := ""]
+  }
   ##
   panels.buffer<-data.table::rbindlist(
     lapply(
