@@ -28,7 +28,7 @@ panel.tables<-function(panel,test.number=20,stain.volume=50){
     stop("Volume-based mix calculations are dependent on numerical values stored in the 'titration' column of the panel; check the panel master file and confirm that this column is encoded as numeric.")
   }
   ##
-  panels.mix<-data.table::rbindlist(
+  panels.mix <- data.table::rbindlist(
     lapply(split(
       panel,
       f = panel[,factor(location,levels=c('viability','surface','intracellular'))]
@@ -38,34 +38,43 @@ panel.tables<-function(panel,test.number=20,stain.volume=50){
     cols.keep = c(
       'panel.id', 'location', 'marker', 'fluor', 'volume.mix.uL', 'volume.mix.note'
     ),
-    total.volume=test.number * stain.volume
+    total.volume = test.number * stain.volume
     )
     {
-      panel.split[
-        grep("test/total volume dilution",titration.note),
-        volume.mix.uL:=titration*total.volume
-      ]
+      if(unique(panel.split[['location']]) == 'viability'){
+        denominator <- total.buffer <- panel.split[, (1/titration)]
+        if((test.number * 50) >= denominator) {
+          total.buffer <- denominator * 2
+        }
+        panel.split[, volume.mix.uL := total.buffer/denominator]
+        panel.split[, volume.mix.note := sprintf("+ %d uL VB", total.buffer)]
+      }else{
+        panel.split[
+          grep("test/total volume dilution",titration.note),
+          volume.mix.uL:=titration*total.volume
+        ]
 
-      panel.split[
-        i = (titration * test.number) < 1,
-        j = denominator := 1/titration
-      ]
+        panel.split[
+          i = (titration * test.number) < 1,
+          j = denominator := 1/titration
+        ]
 
-      panel.split[
-        i = denominator <= 1000,
-        j = volume.mix.note := sprintf("of a 1:%d", denominator)
-      ]
-      panel.split[
-        i = denominator > 1000,
-        j = volume.mix.note := sprintf("of a 1:100 --> 1:%d", denominator/100)
-      ]
+        panel.split[
+          i = denominator <= 1000,
+          j = volume.mix.note := sprintf("of a 1:%d", denominator)
+        ]
+        panel.split[
+          i = denominator > 1000,
+          j = volume.mix.note := sprintf("of a 1:100 --> 1:%d", denominator/100)
+        ]
 
-      panel.split[
-        i = !is.na(volume.mix.note),
-        j = volume.mix.uL := test.number
-      ]
+        panel.split[
+          i = !is.na(volume.mix.note),
+          j = volume.mix.uL := test.number
+        ]
 
-      panel.split[, denominator := NULL]
+        panel.split[, denominator := NULL]
+      }
 
       panel.split[
         i = is.na(volume.mix.uL),
@@ -74,7 +83,7 @@ panel.tables<-function(panel,test.number=20,stain.volume=50){
 
       panel.split <- panel.split[, .SD, .SDcols = cols.keep]
 
-      panel.split[, volume.mix.uL := round(volume.mix.uL, 1)]
+      # panel.split[, volume.mix.uL := round(volume.mix.uL, 1)]
 
       panel.split[]
     }
@@ -83,10 +92,16 @@ panel.tables<-function(panel,test.number=20,stain.volume=50){
   )
   ##
   if("volume.mix.note" %in% names(panels.mix)){
-    panels.mix[is.na(volume.mix.note), volume.mix.note := ""]
+    locations <- panels.mix[!is.na(volume.mix.note), location]
+    for(.location in locations){
+      panels.mix[
+        i = location == .location & is.na(volume.mix.note),
+        j = volume.mix.note := ""
+      ]
+    }
   }
   ##
-  panels.buffer<-data.table::rbindlist(
+  panels.buffer <- data.table::rbindlist(
     lapply(
       split(panels.mix,by=c('panel.id','location')),
       function(
@@ -99,10 +114,14 @@ panel.tables<-function(panel,test.number=20,stain.volume=50){
         vols<-unique(panel.split[,.(panel.id,location)])
         ##
         vols<-if(vols$location == 'viability'){
+          total.volume <- panel.split[
+            ,
+            as.numeric(gsub("\\D", "", volume.mix.note))
+          ]
           cbind(
             vols,
             data.table::data.table(
-              volume.uL = total.volume - panel.split[,sum(volume.mix.uL)],
+              volume.uL = total.volume,
               buffer.type = "VB"
             )
           )
@@ -154,10 +173,16 @@ panel.kables<-function(panel.tables){
     )
   }
   ##
-  mixes<-lapply(split(panel.tables$mix,by=c('panel.id','location')),function(mix){
-    # drop.cols<-names(which(sapply(mix,function(j) all(is.na(j)))))
-    kable.func(mix)
-  })
+  mixes <- lapply(
+    split(panel.tables$mix, by = c('panel.id', 'location')), function(mix){
+      if(
+        unique(mix[,location]) == 'viability' |
+        mix[, all(is.na(volume.mix.note))]
+      ) mix[, volume.mix.note := NULL]
+
+      kable.func(mix)
+    }
+  )
   ##
   buffers<-lapply(split(panel.tables$buffer,by=c('panel.id','location')),function(buffer){
     # drop.cols<-names(which(sapply(mix,function(j) all(is.na(j)))))

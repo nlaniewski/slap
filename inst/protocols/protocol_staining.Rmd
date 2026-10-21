@@ -63,7 +63,7 @@ Tests = `r params$tests.number`
 
 <div style="page-break-after: always;"></div>
 
-## Intracellular
+## Intracellular -- prepare before starting protocol proper
 
 Tests = `r params$tests.number`
 
