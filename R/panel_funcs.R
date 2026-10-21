@@ -35,7 +35,9 @@ panel.tables<-function(panel,test.number=20,stain.volume=50){
     ),
     function(
     panel.split,
-    cols.keep=c('panel.id','location','marker','fluor','volume.mix.uL'),
+    cols.keep = c(
+      'panel.id', 'location', 'marker', 'fluor', 'volume.mix.uL', 'volume.mix.note'
+    ),
     total.volume=test.number * stain.volume
     )
     {
@@ -43,19 +45,37 @@ panel.tables<-function(panel,test.number=20,stain.volume=50){
         grep("test/total volume dilution",titration.note),
         volume.mix.uL:=titration*total.volume
       ]
-      panel.split[is.na(volume.mix.uL),volume.mix.uL:=titration*test.number]
-      panel.split<-panel.split[,.SD,.SDcols=cols.keep]
-      if(panel.split[,any(volume.mix.uL<1)]){
-        panel.split[volume.mix.uL<1,
-                    c('volume.mix.uL','volume.mix.note'):=list(volume.mix.uL*10,"of a 1:10 in buffer")
-        ]
-      }
-      if(panel.split[,any(volume.mix.uL<1)]){
-        panel.split[volume.mix.uL<1,
-                    c('volume.mix.uL','volume.mix.note'):=list(volume.mix.uL*10,"of a 1:100 in buffer")
-        ]
-      }
-      panel.split[,volume.mix.uL := round(volume.mix.uL,1)]
+
+      panel.split[
+        i = (titration * test.number) < 1,
+        j = denominator := 1/titration
+      ]
+
+      panel.split[
+        i = denominator <= 1000,
+        j = volume.mix.note := sprintf("of a 1:%d", denominator)
+      ]
+      panel.split[
+        i = denominator > 1000,
+        j = volume.mix.note := sprintf("of a 1:100 --> 1:%d", denominator/100)
+      ]
+
+      panel.split[
+        i = !is.na(volume.mix.note),
+        j = volume.mix.uL := test.number
+      ]
+
+      panel.split[, denominator := NULL]
+
+      panel.split[
+        i = is.na(volume.mix.uL),
+        j = volume.mix.uL := titration * test.number
+      ]
+
+      panel.split <- panel.split[, .SD, .SDcols = cols.keep]
+
+      panel.split[, volume.mix.uL := round(volume.mix.uL, 1)]
+
       panel.split[]
     }
     ),
