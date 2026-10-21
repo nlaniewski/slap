@@ -28,12 +28,17 @@ panel.tables<-function(panel,test.number=20,stain.volume=50){
     stop("Volume-based mix calculations are dependent on numerical values stored in the 'titration' column of the panel; check the panel master file and confirm that this column is encoded as numeric.")
   }
   ##
+  panel[
+    ,
+    location := factor(
+      location,
+      levels = c('viability', 'surface', 'intracellular')
+    )
+  ]
+  panel <- panel[!is.na(location)]
+  ##
   panels.mix <- data.table::rbindlist(
-    lapply(split(
-      panel,
-      f = panel[,factor(location,levels=c('viability','surface','intracellular'))]
-    ),
-    function(
+    lapply(split(panel, by = 'location', drop = T), function(
     panel.split,
     cols.keep = c(
       'panel.id', 'location', 'marker', 'fluor', 'volume.mix.uL', 'volume.mix.note'
@@ -85,7 +90,7 @@ panel.tables<-function(panel,test.number=20,stain.volume=50){
 
       # panel.split[, volume.mix.uL := round(volume.mix.uL, 1)]
 
-      panel.split[]
+      droplevels(panel.split)[]
     }
     ),
     fill = TRUE
@@ -103,7 +108,7 @@ panel.tables<-function(panel,test.number=20,stain.volume=50){
   ##
   panels.buffer <- data.table::rbindlist(
     lapply(
-      split(panels.mix,by=c('panel.id','location')),
+      split(panels.mix, by = c('panel.id', 'location'), drop = T),
       function(
     panel.split,
     total.volume=(test.number*stain.volume),
