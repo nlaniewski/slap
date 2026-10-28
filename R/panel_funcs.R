@@ -1,4 +1,11 @@
-get.panel.from.master<-function(panel.master.path,study.id=NULL,panel.id=NULL,drop.unused.detectors=TRUE){
+get.panel.from.master <- function(
+    panel.master.path,
+    study.id = NULL,
+    panel.id = NULL,
+    drop.unused.detectors = TRUE,
+    drop.unspecified.location = TRUE
+)
+{
   ##
   file.extension<-sub("^.*\\.","",panel.master.path)
   if(!file.extension %in% c('csv','xlsx')){
@@ -20,12 +27,20 @@ get.panel.from.master<-function(panel.master.path,study.id=NULL,panel.id=NULL,dr
   if(drop.unused.detectors){
     panel<-panel[!is.na(marker)]
   }
+  if(drop.unspecified.location){
+    panel <- panel[!is.na(location)]
+  }
   panel[]
 }
-panel.tables<-function(panel,test.number=20,stain.volume=50){
+panel.tables <- function(
+    panel,
+    test.number = 10,
+    stain.volume = 50
+)
+{
   ##
-  if(panel[,!is.numeric(titration)]){
-    stop("Volume-based mix calculations are dependent on numerical values stored in the 'titration' column of the panel; check the panel master file and confirm that this column is encoded as numeric.")
+  if(panel[,!is.numeric(volume.test)]){
+    stop("Volume-based mix calculations are dependent on numerical values stored in the 'volume.test' column of the panel; check the panel master file and confirm that this column is encoded as numeric.")
   }
   ##
   panel[
@@ -35,7 +50,6 @@ panel.tables<-function(panel,test.number=20,stain.volume=50){
       levels = c('viability', 'surface', 'intracellular')
     )
   ]
-  panel <- panel[!is.na(location)]
   ##
   panels.mix <- data.table::rbindlist(
     lapply(split(panel, by = 'location', drop = T), function(
@@ -47,43 +61,40 @@ panel.tables<-function(panel,test.number=20,stain.volume=50){
     )
     {
       if(unique(panel.split[['location']]) == 'viability'){
-        denominator <- total.buffer <- panel.split[, (1/titration)]
-        if((test.number * 50) >= denominator) {
-          total.buffer <- denominator * 2
-        }
-        panel.split[, volume.mix.uL := total.buffer/denominator]
-        panel.split[, volume.mix.note := sprintf("+ %d uL VB", total.buffer)]
+        ## viability dyes are aliquoted at 2 uL (Scheible Lab)
+        panel.split[
+          ,
+          j = c('volume.mix.uL', 'volume.mix.note') := {
+            vol.dye <- ceiling(volume.test * test.number)
+            total.buffer <- (stain.volume * vol.dye) / volume.test
+            ##
+            list(vol.dye, sprintf("+ %d uL VB", total.buffer))
+          }
+        ]
       }else{
-        panel.split[
-          grep("test/total volume dilution",titration.note),
-          volume.mix.uL:=titration*total.volume
-        ]
+        # panel.split[
+        #   grep("test/total volume dilution", titration.note),
+        #   volume.mix.uL := titration * total.volume
+        # ]
 
         panel.split[
-          i = (titration * test.number) < 1,
-          j = denominator := 1/titration
-        ]
-
-        panel.split[
-          i = denominator <= 1000,
-          j = volume.mix.note := sprintf("of a 1:%d", denominator)
-        ]
-        panel.split[
-          i = denominator > 1000,
-          j = volume.mix.note := sprintf("of a 1:100 --> 1:%d", denominator/100)
+          i = dilution.factor > test.number,
+          volume.mix.note := sprintf("of a 1:%d", dilution.factor)
         ]
 
         panel.split[
           i = !is.na(volume.mix.note),
           j = volume.mix.uL := test.number
         ]
-
-        panel.split[, denominator := NULL]
       }
 
       panel.split[
         i = is.na(volume.mix.uL),
-        j = volume.mix.uL := titration * test.number
+        j = volume.mix.uL := volume.test * test.number
+      ]
+      panel.split[
+        i = is.na(volume.mix.note),
+        j = volume.mix.note := 'neat'
       ]
 
       panel.split <- panel.split[, .SD, .SDcols = cols.keep]
@@ -164,17 +175,29 @@ panel.tables<-function(panel,test.number=20,stain.volume=50){
 panel.kables<-function(panel.tables){
   ##
   kable.func<-function(dt){
-    kableExtra::footnote(
-      kable_input=kableExtra::kable_classic_2(
-        kableExtra::kbl(
-          dt
-        ),
-        full_width=FALSE,
-        c('striped','hover')
-      ),
+    ## base HTML table
+    tbl <- kableExtra::kbl(dt)
+    ## themed table with bootstrap options
+    # tbl <- kableExtra::kable_classic_2(tbl, full_width = FALSE, lightable_options = "striped")
+    ## footnote
+    tbl <- kableExtra::footnote(
+      tbl,
       general_title = "Volume(s) uL:",
       general = "Add the indicated volume(s) to a Protein LoBind 1.5 mL tube",
       footnote_as_chunk = TRUE
+    )
+    ## bootstrap options
+    # tbl <- kableExtra::kable_styling(
+    #   tbl,
+    #   bootstrap_options = c("striped", "hover", "condensed"),
+    #   full_width = FALSE
+    # )
+    tbl <- kableExtra::kable_styling(
+      tbl,
+      bootstrap_options = c("striped", "hover", "condensed"),
+      full_width = FALSE,
+      position = "center",
+      html_font = "Calibri"
     )
   }
   ##
