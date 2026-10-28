@@ -25,6 +25,17 @@ params:
 </style>
 ```
 
+```{css, echo=FALSE}
+@media print {
+  .table-striped tbody tr:nth-of-type(odd) td {
+    background-color: #DBDBDB !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
+```
+
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
